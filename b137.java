@@ -2,7 +2,7 @@ package BTDay2;
 
 import java.util.Scanner;
 
-public class b135 {
+public class b137 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.printf("Nhập kích thước của array : ");
@@ -23,19 +23,15 @@ public class b135 {
         for (int value : arr) {
             System.out.printf(value+"\t");
         }
-        int max=-1;
-        boolean flag_negative=true;
+        int min_value = arr[0];
+        int min_position=0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0) {
-                flag_negative=false;
-                max =  arr[i];
-                break;
+            if (min_value > arr[i]) {
+                min_value = arr[i];
+                min_position=i;
             }
         }
-        if (flag_negative==true) {
-            System.out.printf("\nMảng không có giá trị dương : %d", max);
-        } else {
-            System.out.printf("\nGía trị dương đầu tiên là %d",max);
-        }
+        System.out.println();
+        System.out.printf("Gía trị min= %d, vị trí %d",min_value,min_position);
     }
 }
